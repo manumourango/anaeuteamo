@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quer namorar comigo?</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #ffe6f2; /* rosa bebê para o fundo */
+            color: #e75480; /* rosa suave */
+            margin: 0;
+            padding: 20px;
+            position: relative;
+        }
+        h1 {
+            color: #d94e76;
+        }
+        p {
+            color: #e75480;
+        }
+        img {
+            width: 200px;
+            height: auto;
+            margin: 20px 0;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        }
+        .button {
+            display: inline-block;
+            margin: 20px;
+            padding: 15px 30px;
+            font-size: 18px;
+            color: white;
+            background-color: #ff85ad;
+            text-decoration: none;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+        }
+        .button:hover {
+            background-color: #e75480;
+        }
+        #noButton {
+            position: relative;
+        }
+        #gifContainer {
+            display: none;
+        }
+        @keyframes move {
+            0% { transform: translate(0, 0); }
+            25% { transform: translate(50px, 0); }
+            50% { transform: translate(0, 50px); }
+            75% { transform: translate(-50px, 0); }
+            100% { transform: translate(0, -50px); }
+        }
+    </style>
+</head>
+<body>
+    <h1>vc quer namorar cmg?</h1>
+    <p>eu pensei em várias formas de te pedir isso, mas nada parecia especial o bastante... então criei isso só pra vc!</p>
+
+    <!-- botão sim -->
+    <a href="#" class="button">sim! quero</a>
+
+    <!-- botão não -->
+    <button id="noButton" class="button" onmouseover="moveButton()" ontouchstart="showGif()">claro que não né manu, eu te odeio</button>
+
+    <!-- gif do gatinho chorando -->
+    <div id="gifContainer">
+        <img src="https://tenor.com/view/rip-juice-cry-cat-kitten-tears-gif-15751834"gif gatinho chorando">
+    </div>
+
+    <script>
+        const noButton = document.getElementById('noButton');
+        const gifContainer = document.getElementById('gifContainer');
+
+        // faz o botão "não" fugir do mouse
+        function moveButton() {
+            const x = Math.random() * window.innerWidth * 0.7; // limita a posição pra não sair da tela
+            const y = Math.random() * window.innerHeight * 0.7;
+            noButton.style.position = 'absolute';
+            noButton.style.left = `${x}px`;
+            noButton.style.top = `${y}px`;
+        }
+
+        // mostra o gif no celular
+        function showGif() {
+            gifContainer.style.display = 'block';
+            noButton.style.display = 'none'; // esconde o botão depois de clicar
+        }
+    </script>
+</body>
+</html>
